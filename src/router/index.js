@@ -7,6 +7,8 @@ import BlogDetail from '../views/BlogDetail.vue'
 import Login from '../views/Login.vue'
 import AdminLayout from '../views/admin/AdminLayout.vue'
 import Dashboard from '../views/admin/Dashboard.vue'
+import BlogList from '../views/admin/BlogList.vue'
+import BlogEditor from '../views/admin/BlogEditor.vue'
 import { requireAuth } from '../middleware/auth'
 
 const routes = [
@@ -56,6 +58,24 @@ const routes = [
         name: 'Dashboard',
         component: Dashboard,
         meta: { title: 'Dashboard - Admin' }
+      },
+      {
+        path: 'blog',
+        name: 'BlogList',
+        component: BlogList,
+        meta: { title: 'ブログ管理 - Admin' }
+      },
+      {
+        path: 'blog/new',
+        name: 'BlogNew',
+        component: BlogEditor,
+        meta: { title: '新規ブログ作成 - Admin' }
+      },
+      {
+        path: 'blog/:id/edit',
+        name: 'BlogEdit',
+        component: BlogEditor,
+        meta: { title: 'ブログ編集 - Admin' }
       }
     ]
   },
