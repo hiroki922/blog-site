@@ -11,6 +11,8 @@ import BlogList from '../views/admin/BlogList.vue'
 import BlogEditor from '../views/admin/BlogEditor.vue'
 import ProjectList from '../views/admin/ProjectList.vue'
 import ProjectEditor from '../views/admin/ProjectEditor.vue'
+import Contact from '../views/Contact.vue'
+import ContactList from '../views/admin/ContactList.vue'
 import { requireAuth } from '../middleware/auth'
 
 const routes = [
@@ -49,6 +51,12 @@ const routes = [
     name: 'Login',
     component: Login,
     meta: { title: 'Login - Portfolio' }
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: Contact,
+    meta: { title: 'Contact - Portfolio' }
   },
   {
     path: '/admin',
@@ -96,6 +104,12 @@ const routes = [
         name: 'ProjectEdit',
         component: ProjectEditor,
         meta: { title: 'プロジェクト編集 - Admin' }
+      },
+      {
+        path: 'contacts',
+        name: 'ContactList',
+        component: ContactList,
+        meta: { title: 'お問い合わせ管理 - Admin' }
       }
     ]
   },
