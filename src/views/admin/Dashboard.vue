@@ -16,9 +16,10 @@
         <router-link to="/admin/projects" class="stat-link">管理する →</router-link>
       </div>
 
-      <div class="stat-card">
+      <div class="stat-card" :class="{ 'has-unread': unreadCount > 0 }">
         <h3>コンタクト</h3>
         <p class="stat-number">{{ contactCount }}</p>
+        <p v-if="unreadCount > 0" class="unread-note">未読 {{ unreadCount }}件</p>
         <router-link to="/admin/contacts" class="stat-link">確認する →</router-link>
       </div>
     </div>
@@ -53,6 +54,7 @@ const { contacts, fetchAllContacts } = useContacts()
 const blogCount = ref(0)
 const projectCount = ref(0)
 const contactCount = ref(0)
+const unreadCount = ref(0)
 
 onMounted(async () => {
   await Promise.all([
@@ -64,6 +66,7 @@ onMounted(async () => {
   blogCount.value = blogs.value.length
   projectCount.value = projects.value.length
   contactCount.value = contacts.value.length
+  unreadCount.value = contacts.value.filter(c => !c.read).length
 })
 </script>
 
@@ -116,6 +119,17 @@ onMounted(async () => {
 
 .stat-link:hover {
   color: var(--color-primary);
+}
+
+.has-unread {
+  border-left: 4px solid var(--color-danger);
+}
+
+.unread-note {
+  font-size: 0.85rem;
+  color: var(--color-danger);
+  font-weight: 600;
+  margin: 0 0 var(--spacing-sm) 0;
 }
 
 .quick-actions {

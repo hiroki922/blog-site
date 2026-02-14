@@ -17,6 +17,7 @@
           <li><router-link to="/about" @click="closeMenu">About</router-link></li>
           <li><router-link to="/projects" @click="closeMenu">Projects</router-link></li>
           <li><router-link to="/blog" @click="closeMenu">Blog</router-link></li>
+          <li><router-link to="/contact" @click="closeMenu">Contact</router-link></li>
           <li v-if="isAuthenticated">
             <router-link to="/admin" @click="closeMenu">管理画面</router-link>
           </li>
