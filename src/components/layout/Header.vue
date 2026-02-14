@@ -3,7 +3,7 @@
     <div class="container">
       <nav class="nav">
         <router-link to="/" class="logo">
-          Portfolio
+          Dev Notes
         </router-link>
 
         <button class="nav-toggle" @click="toggleMenu" aria-label="メニュー">

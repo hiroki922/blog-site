@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
-        <p>&copy; {{ currentYear }} Portfolio. All rights reserved.</p>
+        <p>&copy; {{ currentYear }} Dev Notes. All rights reserved.</p>
         <div class="footer-links">
           <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>

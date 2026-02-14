@@ -20,43 +20,43 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
-    meta: { title: 'Home - Portfolio' }
+    meta: { title: 'Home - Dev Notes' }
   },
   {
     path: '/about',
     name: 'About',
     component: About,
-    meta: { title: 'About - Portfolio' }
+    meta: { title: 'About - Dev Notes' }
   },
   {
     path: '/projects',
     name: 'Projects',
     component: Projects,
-    meta: { title: 'Projects - Portfolio' }
+    meta: { title: 'Projects - Dev Notes' }
   },
   {
     path: '/blog',
     name: 'Blog',
     component: Blog,
-    meta: { title: 'Blog - Portfolio' }
+    meta: { title: 'Blog - Dev Notes' }
   },
   {
     path: '/blog/:slug',
     name: 'BlogDetail',
     component: BlogDetail,
-    meta: { title: 'Blog Post - Portfolio' }
+    meta: { title: 'Blog Post - Dev Notes' }
   },
   {
     path: '/login',
     name: 'Login',
     component: Login,
-    meta: { title: 'Login - Portfolio' }
+    meta: { title: 'Login - Dev Notes' }
   },
   {
     path: '/contact',
     name: 'Contact',
     component: Contact,
-    meta: { title: 'Contact - Portfolio' }
+    meta: { title: 'Contact - Dev Notes' }
   },
   {
     path: '/admin',
@@ -133,7 +133,7 @@ const router = createRouter({
 
 // ページタイトル設定
 router.afterEach((to) => {
-  document.title = to.meta.title || 'Portfolio'
+  document.title = to.meta.title || 'Dev Notes'
 })
 
 export default router
