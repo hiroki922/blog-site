@@ -9,6 +9,8 @@ import AdminLayout from '../views/admin/AdminLayout.vue'
 import Dashboard from '../views/admin/Dashboard.vue'
 import BlogList from '../views/admin/BlogList.vue'
 import BlogEditor from '../views/admin/BlogEditor.vue'
+import ProjectList from '../views/admin/ProjectList.vue'
+import ProjectEditor from '../views/admin/ProjectEditor.vue'
 import { requireAuth } from '../middleware/auth'
 
 const routes = [
@@ -76,6 +78,24 @@ const routes = [
         name: 'BlogEdit',
         component: BlogEditor,
         meta: { title: 'ブログ編集 - Admin' }
+      },
+      {
+        path: 'projects',
+        name: 'ProjectList',
+        component: ProjectList,
+        meta: { title: 'プロジェクト管理 - Admin' }
+      },
+      {
+        path: 'projects/new',
+        name: 'ProjectNew',
+        component: ProjectEditor,
+        meta: { title: '新規プロジェクト作成 - Admin' }
+      },
+      {
+        path: 'projects/:id/edit',
+        name: 'ProjectEdit',
+        component: ProjectEditor,
+        meta: { title: 'プロジェクト編集 - Admin' }
       }
     ]
   },

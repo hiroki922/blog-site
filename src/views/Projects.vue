@@ -61,19 +61,15 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { onMounted } from 'vue'
+import { useProjects } from '../composables/useProjects'
 import LoadingSpinner from '../components/common/LoadingSpinner.vue'
 import ErrorMessage from '../components/common/ErrorMessage.vue'
 
-// 仮のプロジェクトデータ（後でSupabaseから取得）
-const projects = ref([])
-const loading = ref(false)
-const error = ref(null)
+const { projects, loading, error, fetchPublishedProjects } = useProjects()
 
 onMounted(() => {
-  // TODO: Supabaseからプロジェクトを取得
-  // 現時点では空配列
-  projects.value = []
+  fetchPublishedProjects()
 })
 </script>
 
